@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              outline: "#757778",
+              "on-surface-variant": "#595c5d",
+              error: "#b41340",
+              "on-error": "#ffefef",
+              "inverse-surface": "#0c0f10",
+              "tertiary-container": "#ff8cbb",
+              surface: "#f5f6f7",
+              "secondary-fixed-dim": "#d3b7ff",
+              "on-error-container": "#510017",
+              "on-tertiary-fixed-variant": "#6f1042",
+              "tertiary-dim": "#8c2959",
+              secondary: "#6d45ad",
+              "primary-fixed-dim": "#9780ff",
+              "error-container": "#f74b6d",
+              tertiary: "#9b3665",
+              "surface-container-low": "#eff1f2",
+              "primary-dim": "#4d00e2",
+              "surface-dim": "#d1d5d7",
+              "on-tertiary-fixed": "#37001d",
+              "on-secondary-fixed": "#441782",
+              "primary-fixed": "#a491ff",
+              "surface-container": "#e6e8ea",
+              "inverse-primary": "#947dff",
+              "secondary-container": "#dec8ff",
+              "on-surface": "#2c2f30",
+              "on-secondary-fixed-variant": "#6239a1",
+              "on-background": "#2c2f30",
+              "surface-container-highest": "#dadddf",
+              "on-tertiary": "#ffeff2",
+              "on-primary-container": "#240075",
+              "on-secondary-container": "#582f97",
+              "on-secondary": "#f9efff",
+              "tertiary-fixed": "#ff8cbb",
+              "surface-container-high": "#e0e3e4",
+              "error-dim": "#a70138",
+              "on-primary-fixed": "#000000",
+              "tertiary-fixed-dim": "#f37cae",
+              "on-primary-fixed-variant": "#2d008e",
+              primary: "#5909ff",
+              "surface-tint": "#5909ff",
+              "primary-container": "#a491ff",
+              "inverse-on-surface": "#9b9d9e",
+              background: "#f5f6f7",
+              "on-primary": "#efe8ff",
+              "secondary-fixed": "#dec8ff",
+              "on-tertiary-container": "#630339",
+              "outline-variant": "#abadae",
+              "surface-bright": "#f5f6f7",
+              "secondary-dim": "#6138a0",
+              "surface-variant": "#dadddf",
+              "surface-container-lowest": "#ffffff",
+            },
+            fontFamily: {
+              headline: ["Manrope"],
+              body: ["Inter"],
+              label: ["Inter"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+
+      .glass-nav {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container"
+  >
+    <!-- TopAppBar -->
+    <header
+      class="fixed top-0 w-full z-50 bg-[#f5f6f7]/70 dark:bg-[#1a1c1e]/70 backdrop-blur-xl shadow-sm dark:shadow-none transition-all duration-300"
+    >
+      <nav class="flex justify-between items-center max-w-7xl mx-auto px-8 py-6">
+        <div
+          class="text-xl font-black tracking-tighter text-[#2c2f30] dark:text-[#f5f6f7] font-headline uppercase"
+        >
+          João Victor
+        </div>
+
+        <div class="hidden md:flex items-center gap-8 font-['Manrope'] font-medium tracking-tight">
+          <a
+            class="text-[#2c2f30] dark:text-[#abadae] hover:text-[#5909ff] transition-colors"
+            href="#projects"
+            >Projetos</a
+          >
+          <a
+            class="text-[#2c2f30] dark:text-[#abadae] hover:text-[#5909ff] transition-colors"
+            href="#about"
+            >Sobre mim</a
+          >
+          <a
+            class="text-[#2c2f30] dark:text-[#abadae] hover:text-[#5909ff] transition-colors"
+            href="#contact"
+            >Contato</a
+          >
+
+          <button
+            class="flex items-center text-[#2c2f30] dark:text-[#abadae] hover:opacity-80 transition-all duration-300 scale-105"
+          >
+            <span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+          </button>
+        </div>
+
+        <!-- Mobile Toggle -->
+        <div class="md:hidden flex items-center">
+          <span class="material-symbols-outlined text-primary" data-icon="menu">menu</span>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="min-h-screen flex flex-col justify-center px-8 pt-20 max-w-7xl mx-auto overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-8">
+            <span
+              class="inline-block px-4 py-1.5 rounded-full bg-surface-container-highest text-primary font-label text-xs font-bold tracking-widest uppercase mb-6"
+            >
+              Disponível para novos projetos
+            </span>
+
+            <h1
+              class="font-headline font-extrabold text-5xl md:text-7xl lg:text-8xl tracking-tighter text-on-surface leading-[0.9] mb-8"
+            >
+              Desenvolver <br />
+              <span class="text-primary italic">Full Stack</span>
+            </h1>
+
+            <p class="max-w-xl text-lg md:text-xl text-on-surface-variant leading-relaxed mb-10 font-medium">
+              Desenvolvedor focado em LandingPages e portifolios!
+            </p>
+
+            <div class="flex flex-wrap gap-4">
+              <a
+                class="px-8 py-4 rounded-xl bg-gradient-to-br from-primary to-primary-container text-on-primary font-headline font-bold text-lg hover:scale-105 transition-transform duration-300 shadow-xl shadow-primary/20"
+                href="#projects"
+              >
+                Ver Projetos
+              </a>
+
+              <a
+                class="px-8 py-4 rounded-xl border-2 border-outline-variant/20 font-headline font-bold text-lg text-on-surface hover:bg-surface-container-low transition-colors duration-300"
+                href="#contact"
+              >
+                Contato
+              </a>
+            </div>
+          </div>
+
+          <div class="hidden lg:block lg:col-span-4 relative">
+            <div class="w-full aspect-square rounded-3xl bg-surface-container-high overflow-hidden relative group">
+              <img
+                alt="Abstract code visualization"
+                class="w-full h-full object-cover grayscale opacity-50 group-hover:scale-110 transition-transform duration-700"
+                data-alt="Abstract code and digital light patterns"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCltUR7aoHKU8E6oo4PpkxDUIkjiHztx6cxHghAi0YJ232ejpyBk_Ay-IDrSEt_2YpWugp3L6vVkZIJmmL-5svrzaAXXKTrWralaW1L_aX4p72WuLyfqX0_kx29UiQJOOOt4zoaVXzkTKSc37zCGkq0cDhKdPW9BEVjwqMC6qWJ05UdOvqSW1tnsKpaj__mpvMZvghAPGWCJh8L8BvIhOjkAoP7gDcTm2zol_ElaOw07_zLSdhgP8ideqttFBs6sYBT1GRYKwNUuH8"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="py-32 bg-surface-container-low" id="about">
+        <div class="max-w-7xl mx-auto px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div class="order-2 lg:order-1 flex justify-center lg:justify-start">
+              <div class="relative">
+                <div class="absolute -inset-4 border border-primary/20 rounded-full animate-pulse"></div>
+                <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-8 border-surface-container-lowest shadow-2xl">
+                  <img
+                    alt="Developer profile"
+                    class="w-full h-full object-cover"
+                    data-alt="Professional portrait of a male developer"
+                    src=""
+                  />
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="order-1 lg:order-2">
+              <h2 class="font-headline font-bold text-3xl md:text-4xl text-on-surface mb-8">
+                Evoluindo a Web através da precisão técnica.
+              </h2>
+
+              <div class="space-y-6 text-on-surface-variant text-lg leading-relaxed">
+                <p>Sou desenvolvedor web e trabalho com PHP, JavaScript e MySQL, utilizando Git no controle de versões.</p>
+                <p>
+                  Gosto de desenvolver soluções práticas e eficientes, buscando sempre entender bem o que o cliente precisa para entregar um resultado que realmente funcione no dia a dia.
+                </p>
+              </div>
+
+              <div class="mt-12">
+                <h3 class="font-label uppercase text-xs font-extrabold tracking-widest text-primary mb-6">Tech Stack</h3>
+
+                <div class="flex flex-wrap gap-3">
+                  <span class="px-5 py-2 rounded-full bg-surface-container-highest text-on-surface font-medium text-sm">JavaScript</span>
+                  <span class="px-5 py-2 rounded-full bg-surface-container-highest text-on-surface font-medium text-sm">PHP</span>
+                  <span class="px-5 py-2 rounded-full bg-surface-container-highest text-on-surface font-medium text-sm">Git</span>
+                  <span class="px-5 py-2 rounded-full bg-surface-container-highest text-on-surface font-medium text-sm">MySql</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="py-32 bg-surface" id="projects">
+        <div class="max-w-7xl mx-auto px-8">
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+            <div>
+              <h2 class="font-headline font-extrabold text-4xl md:text-6xl tracking-tighter text-on-surface mb-4">
+                Projetos já realizados
+              </h2>
+              <p class="text-on-surface-variant max-w-md text-lg">
+                Uma pequena demonstração do que o seu trabalho pode se tornar com a tecnologia.
+              </p>
+            </div>
+          </div>
+
+          <!-- Projects Bento Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project Card 1 -->
+            <div
+              class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-transparent hover:border-primary/10"
+            >
+              <div class="aspect-video overflow-hidden relative">
+                <img
+                  alt="Fintech Dashboard"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  data-alt="Modern clean dashboard interface for finance"
+                  src="https://i.ibb.co/SwYXKjjs/proj1-Preview.png"
+                />
+                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+
+              <div class="p-8">
+                <div class="flex gap-2 mb-4">
+                  <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60">HTML</span>
+                  <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60">CSS</span>
+                  <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60">JavaScript</span>
+                </div>
+
+                <h3 class="font-headline font-bold text-xl text-on-surface mb-3">The Obsidian Standard</h3>
+                <p class="text-on-surface-variant text-sm leading-relaxed mb-8 line-clamp-2">
+                  LandingPage para agendamento de horarios em uma barbearia
+                </p>
+
+                <div class="flex gap-4">
+                  <a class="flex items-center gap-2 text-primary font-bold text-sm group/link" href="https://projeto-portfolio-01.vercel.app/#informacoes" target="_blank">
+                    Ver projeto
+                    <span
+                      class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1"
+                      data-icon="arrow_forward"
+                      >arrow_forward</span
+                    >
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div
+              class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-transparent hover:border-primary/10"
+            >
+              <div class="aspect-video overflow-hidden relative">
+                <img
+                  alt="E-commerce App"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  data-alt="Minimalist mobile e-commerce application design"
+                  src="https://i.ibb.co/tdfTWM6/proj2-Preview.png"
+                />
+                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+
+              <div class="p-8">
+                <div class="flex gap-2 mb-4">
+                  <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60">HTML</span>
+                  <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60">CSS</span>
+                  <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60">JavaScript</span>
+                </div>
+
+                <h3 class="font-headline font-bold text-xl text-on-surface mb-3">Velvet Studio</h3>
+                <p class="text-on-surface-variant text-sm leading-relaxed mb-8 line-clamp-2">
+                  LandingPage para agendamento de horarios para uma NailDesigner
+                </p>
+
+                <div class="flex gap-4">
+                  <a class="flex items-center gap-2 text-primary font-bold text-sm group/link" href="https://projeto-portfolio-02.vercel.app/" target="_blank">
+                    Ver projeto
+                    <span
+                      class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1"
+                      data-icon="arrow_forward"
+                      >arrow_forward</span
+                    >
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div
+              class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-transparent hover:border-primary/10"
+            >
+              <div class="aspect-video overflow-hidden relative">
+                <img
+                  alt="AI Tooling"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  data-alt="Abstract neural network and code representation"
+                  src="https://i.ibb.co/8nKcdnZ9/proj3-Preview.png" 
+                />
+                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+
+              <div class="p-8">
+                <div class="flex gap-2 mb-4">
+                  <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60">HTML</span>
+                  <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60">CSS</span>
+                  <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant/60">JavaScript</span>
+                </div>
+
+                <h3 class="font-headline font-bold text-xl text-on-surface mb-3">Kinect Iron</h3>
+                <p class="text-on-surface-variant text-sm leading-relaxed mb-8 line-clamp-2">
+                  LandingPage para informações e tirar duvidas para academia
+                </p>
+
+                <div class="flex gap-4">
+                  <a class="flex items-center gap-2 text-primary font-bold text-sm group/link" href="https://projeto-portfolio-03.vercel.app/">
+                    Ver projeto
+                    <span
+                      class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1"
+                      data-icon="arrow_forward"
+                      >arrow_forward</span
+                    >
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="py-32 bg-surface-container-lowest" id="contact">
+        <div class="max-w-7xl mx-auto px-8">
+          <div class="bg-inverse-surface rounded-[2rem] p-12 md:p-20 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none">
+              <img
+                alt="Circuit Pattern"
+                class="w-full h-full object-cover"
+                data-alt="Abstract technology circuit pattern background"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEDsO_3FDhvTl0PGo8SizQXJ8nXS-KEcKNqhC8VFHjQwirt4ZFEZ3StjkQo9QZ6D5lkGLL1qUQ_WNxXotxWkyx0s772nO9TA7Z91t2lnwEKF2vinD2_3baMYzvyd8aVZB8nnRSf2cNOEb-HNDMKnDww2ZZHC4Q1je2W_iRLpmplyJoHkpVphvwV-A6NHLkdd7cM41FJtXdR0JDbAodV2DbNeOaKdt-k3Ixsli0ZXiotWf1Ke6fadaVeJ8QcJkFX9y4Go56nLMvAAU"
+              />
+            </div>
+
+            <div class="relative z-10 max-w-2xl">
+              <h2 class="font-headline font-black text-4xl md:text-6xl text-surface mb-8 tracking-tighter">
+                Vamos construir o futuro juntos?
+              </h2>
+
+              <p class="text-inverse-on-surface text-lg md:text-xl mb-12 leading-relaxed">
+                Estou sempre aberto a novas oportunidades e colaborações. Sinta-se à vontade para entrar em contato.
+              </p>
+
+              <div class="flex flex-col sm:flex-row gap-6">
+                <a
+                  class="flex items-center justify-center gap-3 bg-primary text-on-primary px-8 py-4 rounded-xl font-bold hover:bg-primary-dim transition-colors"
+                  href="mailto:joaovictorgoncalveskiko@gmail.com"
+                >
+                  <span class="material-symbols-outlined" data-icon="mail">mail</span>
+                  joaovictorgoncalveskiko@gmail.com
+                </a>
+
+                <div class="flex items-center gap-4">
+                  <div class="flex flex-col sm:flex-row gap-6">
+                    <a
+                      class="flex items-center justify-center gap-3 bg-primary text-on-primary px-8 py-4 rounded-xl font-bold hover:bg-primary-dim transition-colors"
+                      href="https://wa.me/41999627476?text=Olá, eu gostaria fazer um orçamento."
+                      target="_blank"
+                    >
+                      <span class="material-symbols-outlined" data-icon="phone">phone</span>
+                      Whatsapp
+                    </a>
+
+                    <div class="flex items-center gap-4">
+                      <a
+                        class="w-12 h-12 rounded-xl bg-surface/10 flex items-center justify-center text-surface hover:bg-primary/20 transition-colors"
+                        href="#projects"
+                      >
+                        <span class="material-symbols-outlined" data-icon="code">code</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="w-full py-12 px-8 bg-[#f5f6f7] dark:bg-[#1a1c1e] border-t border-[#abadae]/20"
+    >
+      <div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto">
+        <div class="mb-8 md:mb-0">
+          <span class="text-lg font-bold text-[#2c2f30] dark:text-[#f5f6f7] font-headline"></span>
+          <p
+            class="text-[#abadae] dark:text-[#6d45ad] text-[10px] font-bold uppercase tracking-[0.2em] mt-2"
+          ></p>
+        </div>
+
+        <div class="flex gap-8 font-['Inter'] text-sm tracking-wide uppercase font-semibold">
+          <a
+            class="text-[#abadae] dark:text-[#6d45ad] hover:text-[#5909ff] transition-colors duration-300 opacity-100 hover:opacity-70"
+            target="_blank"
+            href="https://github.com/jao1023"
+            >GitHub</a
+          >
+          <a
+            class="text-[#abadae] dark:text-[#6d45ad] hover:text-[#5909ff] transition-colors duration-300 opacity-100 hover:opacity-70"
+            href="https://www.linkedin.com/in/joao-victor-mattos-goncalves-4638a8353/"
+            >LinkedIn</a
+          >
+          <a
+            class="text-[#abadae] dark:text-[#6d45ad] hover:text-[#5909ff] transition-colors duration-300 opacity-100 hover:opacity-70"
+            href="https://wa.me/41999627476?text=Olá, eu gostaria fazer um orçamento."
+            target="_blank"
+            >Whatsapp</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
